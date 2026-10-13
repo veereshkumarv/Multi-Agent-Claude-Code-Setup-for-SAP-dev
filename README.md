@@ -10,7 +10,7 @@ security, release, deploy, docs) wired into two pipelines: `/sap-plan` and `/sap
 1. **Install Claude Code**, if you haven't already — see https://claude.com/claude-code.
 2. **Clone this repo** and open Claude Code with it as your working directory:
    ```
-   git clone <this-repo-url> sap-project
+   git clone https://github.com/veereshkumarv/Multi-Agent-Claude-Code-Setup-for-SAP-dev.git sap-project
    cd sap-project
    claude
    ```
