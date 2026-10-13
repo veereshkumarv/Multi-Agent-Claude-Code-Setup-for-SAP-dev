@@ -16,8 +16,9 @@ Check:
 2. **Test scaffolding** — do OPA5/QUnit test folders already exist for this app, or does the plan
    need to create them? Is a test double/mock service needed for entities not yet implemented
    server-side?
-3. **TypeScript vs JS consistency** — does the plan match the existing app's language choice
-   (check `tsconfig.json` presence), rather than mixing JS and TS in the same project?
+3. **JavaScript consistency** — does the plan stick to plain JavaScript (this project's default),
+   flagging if an existing app was set up with TypeScript instead so the mismatch is resolved
+   deliberately rather than mixed silently?
 4. **Build tooling** — any missing npm scripts, missing `cds-plugin-ui5` install, missing
    `ui5.yaml` configuration that will block `cds watch` or the UI5 CLI from working?
 5. **Iteration cost** — does the plan sequence work so the implementer can verify early (e.g. get

@@ -1,18 +1,18 @@
 # SAP Project — Multi-Agent Development Setup
 
-> Template scaffold for SAP application development (SAPUI5/Fiori, CAP, and/or ABAP/RAP), using a
-> gstack-style roster of specialized agents wired into pipelines. Replace this paragraph with a
-> real project description once the app is defined. Trim the CAP or ABAP sections below once the
-> backend stack is decided.
+> Template scaffold for SAP application development (SAPUI5/Fiori, CAP, and/or ABAP/RAP), using  specialized agents wired into 
+> pipelines. Replace this paragraph with a real project description once the app is defined. Trim the CAP or ABAP sections below 
+> once the backend stack is decided.
 
 ## Stack conventions (apply regardless of role)
 
-- UI5 apps: prefer TypeScript. Never use global `sap.*` access — use `sap.ui.define`/ES imports.
+- UI5 apps: prefer JavaScript. Never use global `sap.*` access — use `sap.ui.define`/ES imports.
   Always use data binding, never inline `<script>`, always use `ComponentSupport` to bootstrap.
 - Forms: use `sap.ui.layout.form.Form` + `ColumnLayout` (2/3/4 columns at M/L/XL) — never
   `SimpleForm` unless explicitly requested.
-- Event handlers (UI5 >= 1.115.0, TypeScript): import the specific `<Control>$<Event>Event` type,
-  not the generic `sap/ui/base/Event`.
+- Event handlers (JavaScript): use the generic `sap/ui/base/Event`; read parameters via
+  `event.getParameter("...")` with the parameter name from the control's API reference
+  (`get_api_reference`).
 - **CAP projects**: UI5 apps live under `app/` in the CAP project root. Install
   `cds-plugin-ui5` in the CAP root. Run everything via `cds watch` from the CAP root — never a
   separate `ui5 serve`/`npm start`, never a `ui5-middleware-simpleproxy`. Use CDS tooling (or

@@ -6,7 +6,7 @@ model: inherit
 ---
 
 You are a senior full-stack SAP developer implementing an approved `PLAN.md`. You write
-production-quality UI5 (TypeScript preferred), CAP (Node/Java CDS), or ABAP/RAP code.
+production-quality UI5 (JavaScript preferred), CAP (Node.js CDS), or ABAP/RAP code.
 
 Before writing UI5 code, call `get_guidelines` once this session if you haven't already, and use
 `get_api_reference` for any control/API you're unsure about. Use `create_ui5_app` /
@@ -16,7 +16,7 @@ boilerplate.
 Follow the stack conventions in this project's `CLAUDE.md` exactly:
 - No global `sap.*` access; `sap.ui.define`/ES imports only.
 - `sap.ui.layout.form.Form` + `ColumnLayout`, never `SimpleForm` unless asked.
-- Specific `<Control>$<Event>Event` types for TS event handlers on UI5 >= 1.115.0.
+- Plain JavaScript event handlers using `sap/ui/base/Event` — no TypeScript event-type imports.
 - CAP: apps under `app/`, run via `cds watch` from the CAP root, no separate dev server or proxy
   middleware.
 
