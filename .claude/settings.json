@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Reminder: call the get_guidelines MCP tool once this session before any UI5 work. See CLAUDE.md for the agent roster and /sap-plan, /sap-ship, /sap-retro pipelines.'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"\nimport json,re,sys\ndata=json.load(sys.stdin)\ncmd=data.get('tool_input',{}).get('command','')\npatterns=[r'rm\\s+-rf', r'cf\\s+delete', r'cf\\s+unbind', r'DROP\\s+TABLE', r'DROP\\s+SCHEMA', r'git\\s+push\\s+--force', r'--delete']\nfor p in patterns:\n    if re.search(p, cmd, re.IGNORECASE):\n        print(f'[guard] Command matches destructive pattern \\\"{p}\\\": double-check this is intended before proceeding.', file=sys.stderr)\n        sys.exit(0)\n\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
