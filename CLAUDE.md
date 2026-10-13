@@ -4,6 +4,26 @@
 > pipelines. Replace this paragraph with a real project description once the app is defined. Trim the CAP or ABAP sections below 
 > once the backend stack is decided.
 
+## Primary reference
+
+Every role below is grounded in
+[`docs/sap-fullstack-practical-guide.md`](docs/sap-fullstack-practical-guide.md) — the SAP
+Full-Stack Development Practical Guide v4.0. If an agent's checklist and the guide ever disagree,
+the guide wins; update the agent, don't work around it. The guide uses normative language that
+applies across every role:
+
+- **MUST** — mandatory; a change that breaks the rule does not merge or release without an
+  approved exception.
+- **SHOULD** — expected approach; deviation needs a written reason and evidence the alternative
+  is safe.
+- **MAY** — optional; use only when it adds value without unnecessary complexity.
+
+It also defines clean-core extensibility levels used throughout architecture, security, and
+release review: **Level A** (released API/extension point — preferred), **Level B** (SAP-classified
+classic API, when Level A doesn't cover it), **Level C** (internal object, exception only, with an
+owner and remediation path), **Level D** (modifications/implicit enhancements/unsupported direct
+writes — forbidden for new work).
+
 ## Stack conventions (apply regardless of role)
 
 - UI5 apps: prefer JavaScript. Never use global `sap.*` access — use `sap.ui.define`/ES imports.
