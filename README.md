@@ -12,6 +12,10 @@ for reference). If you're new to the team, skim it once: it covers the RAP-vs-CA
 framework, clean-core extensibility levels (A/B/C/D), domain/service design rules, the test
 pyramid, and release/operations checklists that every agent below cites by section number.
 
+Not using Claude Code? The same guide, role checklists, and pipeline steps are also available as
+an [MCP server](https://github.com/veereshkumarv/sap-fullstack-mcp-server) that any MCP-capable AI
+harness (Claude Desktop, Cursor, your own agent loop) can connect to.
+
 ## Getting started (new team members)
 
 1. **Install Claude Code**, if you haven't already — see https://claude.com/claude-code.
